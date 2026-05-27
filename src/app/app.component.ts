@@ -10,4 +10,6 @@ import { HeaderComponent } from './core/header/header.component';
   standalone: true,
   imports: [HeaderComponent, RouterOutlet],
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'app'
+}
