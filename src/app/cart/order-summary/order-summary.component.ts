@@ -17,9 +17,9 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderSummaryComponent {
-  products = input.required<ProductCheckout[]>();
-  showControls = input.required<boolean>();
-  totalPrice = input.required<number>();
+  products = input<ProductCheckout[]>();
+  showControls = input<boolean>();
+  totalPrice = input<number>();
 
   /** Add productId */
   add = output<string>();

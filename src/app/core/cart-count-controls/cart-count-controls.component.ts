@@ -20,9 +20,9 @@ import { MatIconButton } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartCountControlsComponent {
-  count = input.required<number>();
-  available = input.required<number>();
-  productName = input.required<string>();
+  count = input<number>();
+  available = input<number>();
+  productName = input<string>();
 
   increment = output();
   decrement = output();

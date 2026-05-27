@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideRouter } from '@angular/router';
 import { EditProductComponent } from './edit-product.component';
 
 describe('EditProductComponent', () => {
@@ -9,6 +9,9 @@ describe('EditProductComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [EditProductComponent],
+      providers: [
+        provideRouter([]), // 👈 Esto simula el sistema de rutas básico
+      ],
     }).compileComponents();
   });
 
