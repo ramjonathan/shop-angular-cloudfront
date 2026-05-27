@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CartComponent } from './cart.component';
 import { CONFIG_TOKEN } from '../core/injection-tokens/config.token';
@@ -10,7 +11,7 @@ describe('CartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartComponent, HttpClientTestingModule],
+      imports: [CartComponent, HttpClientTestingModule, NoopAnimationsModule],
       providers: [
         {
           provide: CONFIG_TOKEN,

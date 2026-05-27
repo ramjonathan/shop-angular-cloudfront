@@ -17,9 +17,13 @@ describe('CartShippingFormComponent', () => {
     fixture = TestBed.createComponent(CartShippingFormComponent);
     component = fixture.componentInstance;
     const formGroup = new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
       address: new FormControl(''),
       city: new FormControl(''),
+      state: new FormControl(''),
       zip: new FormControl(''),
+      country: new FormControl(''),
     });
     fixture.componentRef.setInput('shippingInfo', formGroup);
     fixture.detectChanges();

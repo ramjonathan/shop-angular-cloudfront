@@ -11,6 +11,7 @@ describe('ApiService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [
+        ApiService,
         {
           provide: CONFIG_TOKEN,
           useValue: {
