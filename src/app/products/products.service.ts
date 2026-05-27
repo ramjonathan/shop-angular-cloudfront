@@ -55,6 +55,10 @@ export class ProductsService extends ApiService {
       .pipe(map((resp) => resp.product));
   }
 
+  getProductTitle(product: Product) {
+    return product.title;
+  }
+
   getProducts(): Observable<Product[]> {
     if (!this.endpointEnabled('bff')) {
       console.warn(
