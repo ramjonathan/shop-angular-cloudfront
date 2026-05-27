@@ -68,7 +68,7 @@ export class ProductItemComponent {
   });
 
   get id(): string {
-    return this.product().id;
+    return this.product()?.id ?? '';
   }
 
   constructor() {
