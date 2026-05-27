@@ -5,17 +5,25 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Test API
+    name: Test and Build Angular
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v2
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        python-version: '3.10'
+        node-version: '20'
+        cache: 'npm'
+
     - name: Install requirements
       run: npm ci
+
     - name: Run tests and collect coverage
-      run: npm run test
-    - name: Upload coverage reports to Codecov with GitHub Action
+      run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+    - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v5
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
