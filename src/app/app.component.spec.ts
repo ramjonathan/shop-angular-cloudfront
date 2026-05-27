@@ -28,8 +28,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
 
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'app app is running!',
-    );
+    expect(compiled.querySelector('.container')).toBeTruthy();
   });
 });
