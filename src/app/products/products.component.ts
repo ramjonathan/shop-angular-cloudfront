@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProductItemComponent } from './product-item/product-item.component';
-import { Product } from './product.interface';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-products',
@@ -11,5 +12,7 @@ import { Product } from './product.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsComponent {
-  products: Product[] = [];
+  products = toSignal(inject(ProductsService).getProducts(), {
+    initialValue: [],
+  });
 }
