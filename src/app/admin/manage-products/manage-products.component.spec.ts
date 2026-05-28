@@ -6,6 +6,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ManageProductsService } from './manage-products.service';
 import { of } from 'rxjs';
+import { provideRouter } from '@angular/router';
 
 describe('ManageProductsComponent', () => {
   let component: ManageProductsComponent;
@@ -19,6 +20,7 @@ describe('ManageProductsComponent', () => {
         NoopAnimationsModule,
       ],
       providers: [
+        provideRouter([]),
         {
           provide: ManageProductsService,
           useValue: {
