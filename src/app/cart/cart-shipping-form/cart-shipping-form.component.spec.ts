@@ -24,6 +24,7 @@ describe('CartShippingFormComponent', () => {
       state: new FormControl(''),
       zip: new FormControl(''),
       country: new FormControl(''),
+      comment: new FormControl(''),
     });
     fixture.componentRef.setInput('shippingInfo', formGroup);
     fixture.detectChanges();
