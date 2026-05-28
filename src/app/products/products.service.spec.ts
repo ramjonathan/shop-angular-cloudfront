@@ -42,6 +42,8 @@ describe('ProductsService', () => {
   });
 
   it('should return product title', () => {
-    expect(service.getProductTitle({ title: 'test' } as Product)).toBe('test');
+    expect(service.getProductTitle({ id: '1', title: 'test' } as Product)).toBe(
+      'test',
+    );
   });
 });
