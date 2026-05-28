@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManageProductsComponent } from './manage-products.component';
 import { CONFIG_TOKEN } from 'src/app/core/injection-tokens/config.token';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ManageProductsComponent', () => {
   let component: ManageProductsComponent;
@@ -9,7 +11,11 @@ describe('ManageProductsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageProductsComponent],
+      imports: [
+        ManageProductsComponent,
+        HttpClientTestingModule,
+        NoopAnimationsModule,
+      ],
       providers: [
         {
           provide: CONFIG_TOKEN,
