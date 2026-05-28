@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideRouter } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { EditProductComponent } from './edit-product.component';
+import { CONFIG_TOKEN } from '../../core/injection-tokens/config.token';
 
 describe('EditProductComponent', () => {
   let component: EditProductComponent;
@@ -8,7 +11,34 @@ describe('EditProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditProductComponent],
+      imports: [
+        EditProductComponent,
+        HttpClientTestingModule,
+        NoopAnimationsModule,
+      ],
+      providers: [
+        provideRouter([]), // 👈 Esto simula el sistema de rutas básico
+        {
+          provide: CONFIG_TOKEN,
+          useValue: {
+            apiEndpoints: {
+              product: '',
+              order: '',
+              import: '',
+              bff: '',
+              cart: '',
+            },
+            apiEndpointsEnabled: {
+              product: false,
+              order: false,
+              import: false,
+              bff: false,
+              cart: false,
+            },
+            production: false,
+          },
+        },
+      ],
     }).compileComponents();
   });
 

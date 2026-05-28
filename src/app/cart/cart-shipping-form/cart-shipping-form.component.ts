@@ -12,7 +12,7 @@ import { MatError, MatFormField } from '@angular/material/form-field';
   imports: [ReactiveFormsModule, MatFormField, MatInput, MatError],
 })
 export class CartShippingFormComponent {
-  shippingInfo = input.required<UntypedFormGroup>();
+  shippingInfo = input<UntypedFormGroup>();
 
   nextStep = output();
 }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProductsService } from './products.service';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-products',

@@ -48,8 +48,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent {
-  product = input.required<Product>();
-  index = input.required<number>();
+  product = input<Product>();
+  index = input<number>();
 
   cartBtn = viewChild('cartBtn', { read: ElementRef<HTMLButtonElement> });
   countControls = viewChild('controls', { read: CartCountControlsComponent });
@@ -68,7 +68,7 @@ export class ProductItemComponent {
   });
 
   get id(): string {
-    return this.product().id;
+    return this.product()?.id ?? '';
   }
 
   constructor() {
