@@ -4,6 +4,8 @@ import { ManageProductsComponent } from './manage-products.component';
 import { CONFIG_TOKEN } from 'src/app/core/injection-tokens/config.token';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ManageProductsService } from './manage-products.service';
+import { of } from 'rxjs';
 
 describe('ManageProductsComponent', () => {
   let component: ManageProductsComponent;
@@ -17,6 +19,14 @@ describe('ManageProductsComponent', () => {
         NoopAnimationsModule,
       ],
       providers: [
+        {
+          provide: ManageProductsService,
+          useValue: {
+            uploadProductsCSV: () => {
+              return of(null);
+            },
+          },
+        },
         {
           provide: CONFIG_TOKEN,
           useValue: {
