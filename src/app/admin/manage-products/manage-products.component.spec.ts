@@ -10,7 +10,7 @@ describe('ManageProductsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ManageProductsComponent],
-      provides: [
+      providers: [
         {
           provide: CONFIG_TOKEN,
           useValue: {
